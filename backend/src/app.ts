@@ -1,6 +1,7 @@
 import 'dotenv/config';
 
 import express from 'express';
+import cors from 'cors';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
 import { errors } from 'celebrate';
@@ -18,6 +19,12 @@ mongoose.connect(DB_ADDRESS);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(cors({
+  origin: [
+    'https://mikhail-shcheglov.nomoredomainswork.ru',
+    'https://api.mikhail-shcheglov.nomoredomainswork.ru',
+  ],
+}));
 app.use(routes);
 app.use(errors());
 app.use(errorHandler);
