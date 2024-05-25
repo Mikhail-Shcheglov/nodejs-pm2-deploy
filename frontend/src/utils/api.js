@@ -139,7 +139,7 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://api.mikhail-shcheglov.nomoredomainswork.ru');
+  const api = new Api('https://api.mikhail-shcheglov.nomoredomainswork.ru');
   
   export default api;
   
