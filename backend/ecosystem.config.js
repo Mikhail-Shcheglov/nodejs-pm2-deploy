@@ -44,7 +44,7 @@ module.exports = {
       repo: 'https://github.com/Mikhail-Shcheglov/nodejs-pm2-deploy.git',
       path: DEPLOY_PATH,
       'pre-deploy': `scp ./.env ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}`,
-      'post-deploy': 'npm i && npm run build',
+      'post-deploy': `pm2 start ${DEPLOY_PATH}`,
     },
   },
 };
